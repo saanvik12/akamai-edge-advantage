@@ -30,7 +30,7 @@ const weeks = [
     days: "Days 15-21",
     color: "border-t-accent",
     items: [
-      { lane: "Delivery", tasks: ["Wave 2-3: 3,000 hostnames", "Image Manager activation", "DNS canary (10→50→100%)"] },
+      { lane: "Delivery", tasks: ["Wave 2-3: 3,000 hostnames", "Image Manager activation", "Phased DNS cutover per wave"] },
       { lane: "Security", tasks: ["AAP: Alert → Deny (tuned)", "Bot Manager enforcement", "API rate limiting active"] },
       { lane: "Governance", tasks: ["Risk review update", "Stakeholder progress report", "Incident playbook walkthrough"] },
     ],

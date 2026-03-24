@@ -30,8 +30,8 @@ const deliverySolutions = [
       "Set up GTM failover groups with health checks — if primary origin latency exceeds threshold, traffic auto-routes to secondary",
       "mPulse tracks cache hit ratio and user experience metrics (LCP, TTFB) to validate offload effectiveness during peaks",
     ],
-    result: "Origins handle baseline traffic only, edge absorbs 5x spikes, zero downtime during peaks",
-    bestPractice: "Enable Tiered Distribution to reduce origin load by 60-80% through parent cache hierarchy",
+    result: "Edge absorbs 5× spikes, origin handles baseline load only — reducing the risk of overload-related 5xx errors",
+    bestPractice: "Enable Tiered Distribution to reduce origin requests by 60-80% through parent cache hierarchy",
   },
   {
     icon: Image,

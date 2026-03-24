@@ -118,7 +118,7 @@ const ArchitectureSlide = () => {
 
         <div className="grid grid-cols-3 gap-4">
           {[
-            { color: "bg-primary/10 text-primary", label: "All traffic flows through Akamai Edge — origin never exposed" },
+            { color: "bg-primary/10 text-primary", label: "Edge offload reduces origin load — lowers risk of overload-related 5xx" },
             { color: "bg-accent/10 text-accent", label: "Security enforced at edge — attacks stopped before reaching origin" },
             { color: "bg-akamai-green/10 text-akamai-green", label: "Single platform for delivery, security, and observability" },
           ].map(item => (
