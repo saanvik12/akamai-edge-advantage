@@ -104,8 +104,9 @@ const RoadmapSlide = () => (
         <div className="text-sm">
           <p className="font-semibold text-accent">Addressing "No Testing" Preference</p>
           <p className="text-muted-foreground mt-1">
-            Instead of skipping testing entirely, we use <strong>canary deployments via GTM</strong> — routing 10% of traffic to new configs first. 
-            Combined with mPulse monitoring and instant rollback, the customer gets speed without gambling on stability.
+            Instead of skipping testing entirely, we use <strong>phased hostname cohorts</strong> — onboarding in controlled waves (500 → 1,500 → 3,000). 
+            Each wave is validated via mPulse before the next begins. If any wave shows errors or performance degradation, 
+            the DNS cutover is instantly rolled back to the previous provider. Speed without gambling on stability.
           </p>
         </div>
       </div>
