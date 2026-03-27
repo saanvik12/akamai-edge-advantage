@@ -108,11 +108,20 @@ const RiskSlide = () => {
           </table>
         </div>
 
-        <div className="flex justify-center">
-          <div className="flex items-center gap-2 text-xs">
-            {["Team Lead", "Akamai TPM", "Account Director", "VP Escalation"].map((level, i) => (
-              <div key={level} className="flex items-center gap-2">
-                <div className="clean-card text-foreground/60 px-3 py-1.5 font-semibold">{level}</div>
+        <div className="clean-card p-3">
+          <p className="text-xs font-semibold text-muted-foreground uppercase tracking-wider text-center mb-2">Escalation Path (if risk materializes)</p>
+          <div className="flex justify-center items-center gap-2">
+            {[
+              { level: "Team Lead", desc: "First response" },
+              { level: "Akamai TPM (Me)", desc: "Coordination" },
+              { level: "Account Director", desc: "Commercial decisions" },
+              { level: "VP Escalation", desc: "Executive override" },
+            ].map((item, i) => (
+              <div key={item.level} className="flex items-center gap-2">
+                <div className="text-center">
+                  <div className="clean-card text-foreground/70 px-3 py-1.5 font-semibold text-sm">{item.level}</div>
+                  <p className="text-[11px] text-muted-foreground mt-0.5">{item.desc}</p>
+                </div>
                 {i < 3 && <ArrowUpRight size={12} className="text-accent" />}
               </div>
             ))}
