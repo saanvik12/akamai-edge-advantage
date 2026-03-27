@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SlideLayout from "./SlideLayout";
 import CalloutModal from "./CalloutModal";
-import { AlertTriangle, ArrowUpRight, Users } from "lucide-react";
+import { AlertTriangle, ArrowRight, ArrowUpRight, Users } from "lucide-react";
 
 const risks = [
   { id: 1, risk: "Customer skips testing — production issues", likelihood: 4, impact: 4, mitigation: "Phased hostname cohorts via DNS CNAME cutover. mPulse anomaly alerts trigger instant rollback. Each wave validated before next begins." },
