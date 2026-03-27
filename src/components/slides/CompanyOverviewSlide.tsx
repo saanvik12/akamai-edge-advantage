@@ -4,7 +4,7 @@ import { Server, Cloud, Globe, ShoppingCart, AlertTriangle, Check, Target } from
 const currentState = [
   { icon: Server, text: "Legacy monolith on on-prem + AWS" },
   { icon: Globe, text: "Acquired platforms on different providers" },
-  { icon: AlertTriangle, text: "Inconsistent security posture across properties" },
+  { icon: AlertTriangle, text: "Legacy WAF rules outdated on some configurations" },
   { icon: ShoppingCart, text: "Active threats: credential stuffing, scraping, DDoS" },
   { icon: AlertTriangle, text: "New teams not yet trained on Akamai" },
 ];
