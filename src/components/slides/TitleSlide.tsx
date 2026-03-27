@@ -26,7 +26,7 @@ const TitleSlide = () => (
             <div
               key={name}
               className="panel-card-shiny relative overflow-hidden bg-white/5 border border-white/10 rounded px-3 py-2.5 text-center"
-              style={{ animationDelay: `${0.6 + i * 0.15}s` }}
+              style={{ animationDelay: `${0.8 + i * 0.25}s` }}
             >
               <div className="panel-shimmer" />
               <p className="text-white/80 font-display font-semibold text-sm relative z-10">{name}</p>
