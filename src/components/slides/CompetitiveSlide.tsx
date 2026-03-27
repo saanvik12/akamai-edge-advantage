@@ -12,7 +12,7 @@ const advantages = [
 
 const CompetitiveSlide = () => (
   <SlideLayout id="competitive" variant="dark" pageNumber={10}>
-    <div className="space-y-6">
+    <div className="space-y-6 stagger-children">
       <div>
         <p className="text-white/50 font-semibold tracking-[0.2em] uppercase text-xs mb-2">Competitive Advantages</p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-white">Why Akamai</h2>
