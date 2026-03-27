@@ -93,15 +93,17 @@ const SolutionDesignSlide = () => {
 
         <div className="grid md:grid-cols-2 gap-4">
           {deliverySolutions.map((s, i) => (
-            <div key={s.issue} onClick={() => setActiveModal(i)} className="stripe-card callout-badge p-4 group cursor-pointer">
+            <div key={s.issue} onClick={() => setActiveModal(i)} className="clean-card callout-badge p-4 group cursor-pointer hover:border-primary/30 transition-colors">
               <div className="flex items-start gap-3">
-                <s.icon size={20} className="text-primary shrink-0 mt-0.5" />
+                <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center shrink-0">
+                  <s.icon size={16} className="text-primary" />
+                </div>
                 <div className="flex-1 min-w-0">
                   <h3 className="font-display font-bold text-foreground text-sm leading-tight">{s.issue}</h3>
-                  <p className="text-xs text-primary font-semibold mt-0.5">{s.solution}</p>
+                  <p className="text-xs text-muted-foreground mt-0.5">{s.solution}</p>
                   <div className="flex flex-wrap gap-1 mt-2">
                     {s.products.map(p => (
-                      <span key={p} className="text-[11px] px-1.5 py-0.5 rounded bg-primary/10 text-primary font-semibold">{p}</span>
+                      <span key={p} className="text-[11px] px-1.5 py-0.5 rounded bg-muted text-muted-foreground font-medium">{p}</span>
                     ))}
                   </div>
                 </div>
