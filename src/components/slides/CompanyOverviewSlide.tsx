@@ -1,20 +1,20 @@
 import SlideLayout from "./SlideLayout";
-import { Server, Cloud, Globe, ShoppingCart, AlertTriangle, Check, Target } from "lucide-react";
+import { Server, Cloud, Globe, Bug, GraduationCap, AlertTriangle, Target, Network, Zap, ShieldCheck, Map, KeyRound } from "lucide-react";
 
 const currentState = [
   { icon: Server, text: "Legacy monolith on on-prem + AWS" },
-  { icon: Globe, text: "Acquired platforms on different providers" },
-  { icon: AlertTriangle, text: "Legacy WAF rules outdated on some configurations" },
-  { icon: ShoppingCart, text: "Active threats: credential stuffing, scraping, DDoS" },
-  { icon: AlertTriangle, text: "New teams not yet trained on Akamai" },
+  { icon: Network, text: "Acquired platforms on different providers" },
+  { icon: ShieldCheck, text: "Legacy WAF rules outdated on some configurations" },
+  { icon: Bug, text: "Active threats: credential stuffing, scraping, DDoS" },
+  { icon: GraduationCap, text: "New teams not yet trained on Akamai" },
 ];
 
 const targetState = [
   { icon: Cloud, text: "All traffic fronted by Akamai Edge Platform" },
-  { icon: Check, text: "Standardized hostname onboarding & cert automation" },
-  { icon: Check, text: "Delivery optimized for 5× peaks & image performance" },
-  { icon: Check, text: "Modern security: WAF, Bot Manager, API Security" },
-  { icon: Check, text: "Repeatable operating model across all geographies" },
+  { icon: KeyRound, text: "Standardized hostname onboarding & cert automation" },
+  { icon: Zap, text: "Delivery optimized for 5× peaks & image performance" },
+  { icon: ShieldCheck, text: "Modern security: WAF, Bot Manager, API Security" },
+  { icon: Map, text: "Repeatable operating model across all geographies" },
 ];
 
 const CompanyOverviewSlide = () => (
