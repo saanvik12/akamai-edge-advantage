@@ -7,6 +7,7 @@ const deliveryProducts = [
   { icon: Zap, label: "Ion", desc: "Akamai's flagship CDN product for dynamic site acceleration. Combines intelligent caching, prefetching, SureRoute optimization, and adaptive acceleration to deliver fast, reliable web experiences globally." },
   { icon: Image, label: "Image & Video Manager", desc: "Automatically optimizes images at the edge — converts to WebP/AVIF, resizes for device, adjusts quality. Zero origin processing. Reduces image payload 50-70%." },
   { icon: Globe, label: "Global Traffic Management (GTM)", desc: "DNS-based load balancing across origins and regions. Health checks every 60s, automatic failover, geographic and performance-based routing. During migration, keeps legacy provider as fallback for instant rollback via DNS." },
+  { icon: Code2, label: "EdgeWorkers", desc: "Serverless compute at the Akamai edge. Run JavaScript/TypeScript for custom logic without origin round-trips. Key use cases: microservices traffic routing during monolith-to-microservices migration, and custom bot challenge logic at the edge before requests reach origin." },
   { icon: BarChart3, label: "mPulse", desc: "Real User Monitoring (RUM) — measures actual end-user page load, Core Web Vitals (LCP, FID, CLS), and business metrics like conversion rate. Anomaly detection triggers alerts." },
 ];
 
