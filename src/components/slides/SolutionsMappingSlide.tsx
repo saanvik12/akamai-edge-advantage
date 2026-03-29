@@ -9,7 +9,7 @@ const mappingTable = [
     color: "primary",
     items: [
       { challenge: "5,000 hostnames in 30 days", solutions: ["Ion", "GTM", "Bulk API"] },
-      { challenge: "5x traffic surge handling", solutions: ["Ion (SureRoute)", "GTM (Failover)"] },
+      { challenge: "5x traffic surge handling", solutions: ["Ion (SureRoute)", "GTM (Failover)", "Visitor Waiting Room"] },
       { challenge: "Slow image loading", solutions: ["Image & Video Manager"] },
       { challenge: "Production without testing", solutions: ["mPulse (RUM)", "A/B Testing"] },
     ],
