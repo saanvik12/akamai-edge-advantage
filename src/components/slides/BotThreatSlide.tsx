@@ -1,13 +1,14 @@
 import { useState } from "react";
 import SlideLayout from "./SlideLayout";
 import CalloutModal from "./CalloutModal";
+import TermTooltip from "./TermTooltip";
 import { Bot, UserX, ShoppingCart, CreditCard, ArrowRight, ShieldX, ShieldCheck, Brain, Fingerprint, Eye, Cpu } from "lucide-react";
 
 const threats = [
-  { icon: UserX, title: "Credential Stuffing", desc: "Automated login attempts using stolen credentials", impact: "Account takeover, fraud, customer trust loss" },
-  { icon: ShoppingCart, title: "Inventory Scraping", desc: "Competitive bots scraping product data & pricing", impact: "Pricing intelligence leakage, inflated server costs" },
-  { icon: CreditCard, title: "Carding Attacks", desc: "Testing stolen cards against checkout APIs", impact: "Chargeback costs, payment processor penalties" },
-  { icon: Bot, title: "Sophisticated Evasion", desc: "IP rotation, spoofed clients, headless browsers", impact: "Bypasses simple rate limiting and IP blocking" },
+  { icon: UserX, title: "Credential Stuffing", desc: <><TermTooltip term="credential stuffing">Automated login attempts</TermTooltip> using stolen credentials from other breaches</>, key: "cred" },
+  { icon: ShoppingCart, title: "Inventory Scraping", desc: <>Competitive bots <TermTooltip term="inventory scraping">scraping product data</TermTooltip> & pricing</>, key: "scrape" },
+  { icon: CreditCard, title: "Carding Attacks", desc: <>Testing stolen cards via <TermTooltip term="carding">automated checkout attempts</TermTooltip></>, key: "card" },
+  { icon: Bot, title: "Sophisticated Evasion", desc: <><TermTooltip term="IP rotation" />, <TermTooltip term="spoofed clients" />, headless browsers</>, key: "evasion" },
 ];
 
 const BotThreatSlide = () => {
@@ -24,7 +25,7 @@ const BotThreatSlide = () => {
         {/* Threat cards */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {threats.map((t) => (
-            <div key={t.title} className="bg-card rounded-xl p-5 border border-border shadow-sm text-center space-y-3">
+            <div key={t.key} className="bg-card rounded-xl p-5 border border-border shadow-sm text-center space-y-3">
               <div className="bg-destructive/10 w-12 h-12 rounded-full flex items-center justify-center mx-auto">
                 <t.icon size={22} className="text-destructive" />
               </div>

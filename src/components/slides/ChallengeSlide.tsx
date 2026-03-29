@@ -1,4 +1,5 @@
 import SlideLayout from "./SlideLayout";
+import TermTooltip from "./TermTooltip";
 import { Truck, Shield, Clock, Users, Zap, Image, AlertTriangle, Bot, CreditCard, ShoppingCart, UserX, Globe, Layers, GitBranch, ArrowRight } from "lucide-react";
 
 const deliveryChallenges = [
@@ -11,12 +12,12 @@ const deliveryChallenges = [
 ];
 
 const securityChallenges = [
-  { icon: Shield, text: "DDoS attacks on origin" },
-  { icon: AlertTriangle, text: "Legacy WAF rules outdated" },
-  { icon: UserX, text: "Credential stuffing surge" },
-  { icon: ShoppingCart, text: "Inventory scraping by bots" },
-  { icon: CreditCard, text: "Carding on checkout APIs" },
-  { icon: Bot, text: "Sophisticated bot evasion" },
+  { icon: Shield, key: "ddos", text: <><TermTooltip term="DDoS" /> attacks on <TermTooltip term="origin" /></> },
+  { icon: AlertTriangle, key: "waf", text: <>Legacy <TermTooltip term="WAF" /> rules outdated</> },
+  { icon: UserX, key: "cred", text: <><TermTooltip term="Credential stuffing" /> surge</> },
+  { icon: ShoppingCart, key: "scrape", text: <><TermTooltip term="Inventory scraping" /> by bots</> },
+  { icon: CreditCard, key: "card", text: <><TermTooltip term="Carding">Carding</TermTooltip> on checkout APIs</> },
+  { icon: Bot, key: "evasion", text: <>Sophisticated bot evasion (<TermTooltip term="IP rotation" />, <TermTooltip term="spoofed clients" />)</> },
 ];
 
 const scaleGovChallenges = [
@@ -61,8 +62,8 @@ const ChallengeSlide = () => (
             <h3 className="font-display text-base font-bold text-foreground">Security</h3>
             <span className="text-xs text-muted-foreground">6 challenges</span>
           </div>
-          {securityChallenges.map(({ icon: Icon, text }) => (
-            <div key={text} className="stripe-card stripe-card-orange p-3 flex items-center gap-2.5">
+          {securityChallenges.map(({ icon: Icon, text, key }) => (
+            <div key={key} className="stripe-card stripe-card-orange p-3 flex items-center gap-2.5">
               <Icon size={14} className="text-accent shrink-0" />
               <p className="text-sm text-foreground/80">{text}</p>
             </div>
