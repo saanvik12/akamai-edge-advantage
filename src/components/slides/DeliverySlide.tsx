@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SlideLayout from "./SlideLayout";
 import CalloutModal from "./CalloutModal";
-import { Zap, Image, Globe, Code2, BarChart3, ArrowRight, CheckCircle2, Layers } from "lucide-react";
+import { Zap, Image, Globe, Code2, BarChart3, ArrowRight, CheckCircle2, Layers, Clock, Terminal } from "lucide-react";
 
 const solutions = [
   {
