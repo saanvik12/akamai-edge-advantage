@@ -62,8 +62,8 @@ const ChallengeSlide = () => (
             <h3 className="font-display text-base font-bold text-foreground">Security</h3>
             <span className="text-xs text-muted-foreground">6 challenges</span>
           </div>
-          {securityChallenges.map(({ icon: Icon, text }) => (
-            <div key={text} className="stripe-card stripe-card-orange p-3 flex items-center gap-2.5">
+          {securityChallenges.map(({ icon: Icon, text, key }) => (
+            <div key={key} className="stripe-card stripe-card-orange p-3 flex items-center gap-2.5">
               <Icon size={14} className="text-accent shrink-0" />
               <p className="text-sm text-foreground/80">{text}</p>
             </div>
