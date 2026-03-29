@@ -47,20 +47,20 @@ const RoadmapSlide = () => (
         ))}
       </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {weeks.map(w => (
-          <div key={w.week} className="clean-card p-4 space-y-3">
+          <div key={w.week} className="clean-card p-5 space-y-4">
             <div>
-              <h3 className="font-display font-bold text-foreground text-base">{w.week}</h3>
-              <p className="text-xs text-muted-foreground">{w.days} · {w.title}</p>
+              <h3 className="font-display font-bold text-foreground text-lg">{w.week}</h3>
+              <p className="text-sm text-muted-foreground">{w.days} · {w.title}</p>
             </div>
             {w.items.map(lane => (
               <div key={lane.lane}>
-                <p className={`text-xs font-bold ${laneColors[lane.lane]} mb-1`}>{lane.lane}</p>
-                <ul className="space-y-0.5">
+                <p className={`text-xs font-bold ${laneColors[lane.lane]} mb-1.5`}>{lane.lane}</p>
+                <ul className="space-y-1">
                   {lane.tasks.map(task => (
-                    <li key={task} className="flex items-start gap-1.5 text-xs text-muted-foreground">
-                      <CheckCircle2 size={11} className="text-primary/50 mt-0.5 shrink-0" />
+                    <li key={task} className="flex items-start gap-2 text-sm text-muted-foreground leading-snug">
+                      <CheckCircle2 size={12} className="text-primary/50 mt-0.5 shrink-0" />
                       {task}
                     </li>
                   ))}

@@ -13,7 +13,7 @@ const deliveryProducts = [
 
 const securityProducts = [
   { icon: Shield, label: "Prolexic", desc: "Akamai's dedicated DDoS protection product. Always-on with 20+ Tbps of scrubbing capacity across 36 global centers. Stops volumetric, protocol, and application-layer attacks before they reach your infrastructure. Different from WAF — Prolexic handles network-layer volumetric floods, while WAF (App & API Protector) handles application-layer attacks like SQL injection." },
-  { icon: Shield, label: "App & API Protector (AAP)", desc: "Akamai's next-gen WAF product (replaces legacy Kona WAF). Features Adaptive Security Engine with auto-updating rules for OWASP Top 10, API protection, and rate limiting. ML-driven tuning reduces false positives 5x vs legacy WAF." },
+  { icon: Shield, label: "WAF (AAP)", desc: "Akamai's next-gen WAF product — App & API Protector (replaces legacy Kona WAF). Features Adaptive Security Engine with auto-updating rules for OWASP Top 10, API protection, and rate limiting. ML-driven tuning reduces false positives 5x vs legacy WAF." },
   { icon: Bot, label: "Bot Manager Premier", desc: "Behavioral bot detection using 100+ signals: device fingerprinting, TLS analysis, mouse/keyboard patterns. Catches sophisticated bots that rotate IPs and spoof User-Agents." },
   { icon: Lock, label: "API Security", desc: "Discovers shadow APIs automatically. Schema validation ensures only expected parameters pass. Detects anomalous API usage patterns — protects against data exfiltration and abuse." },
 ];
@@ -115,27 +115,27 @@ const ArchitectureSlide = () => {
             <div className="flex items-center justify-center">
               <ArrowRight size={20} className="text-primary flow-arrow" />
             </div>
-            <div className="border-2 border-primary/20 rounded-md p-5 relative bg-primary/[0.02]">
-              <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-3 py-0.5 rounded text-xs font-bold tracking-wider">AKAMAI EDGE PLATFORM</div>
+            <div className="border-2 border-primary/20 rounded-md p-5 relative bg-primary/[0.02] min-w-0">
+              <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-3 py-0.5 rounded text-xs font-bold tracking-wider whitespace-nowrap">AKAMAI EDGE PLATFORM</div>
               <div className="space-y-4 mt-2">
                 <div>
                   <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-2">Delivery & Performance</p>
-                  <div className="grid grid-cols-5 gap-2">
+                  <div className="grid grid-cols-5 gap-1.5">
                     {deliveryProducts.map(({ icon: Icon, label, desc }) => (
-                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-2.5 text-center hover:border-primary/40 transition-colors cursor-pointer">
-                        <Icon size={16} className="text-primary mx-auto mb-1" />
-                        <p className="text-xs font-semibold text-foreground/70">{label}</p>
+                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-2 text-center hover:border-primary/40 transition-colors cursor-pointer overflow-hidden">
+                        <Icon size={14} className="text-primary mx-auto mb-1 shrink-0" />
+                        <p className="text-[10px] font-semibold text-foreground/70 leading-tight truncate">{label}</p>
                       </button>
                     ))}
                   </div>
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-accent tracking-wider uppercase mb-2">Security</p>
-                  <div className="grid grid-cols-4 gap-2">
+                  <div className="grid grid-cols-4 gap-1.5">
                     {securityProducts.map(({ icon: Icon, label, desc }) => (
-                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-2.5 text-center hover:border-accent/40 transition-colors cursor-pointer">
-                        <Icon size={16} className="text-accent mx-auto mb-1" />
-                        <p className="text-xs font-semibold text-foreground/70">{label}</p>
+                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-2 text-center hover:border-accent/40 transition-colors cursor-pointer overflow-hidden">
+                        <Icon size={14} className="text-accent mx-auto mb-1 shrink-0" />
+                        <p className="text-[10px] font-semibold text-foreground/70 leading-tight truncate">{label}</p>
                       </button>
                     ))}
                   </div>
