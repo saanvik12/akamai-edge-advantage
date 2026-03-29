@@ -115,27 +115,27 @@ const ArchitectureSlide = () => {
             <div className="flex items-center justify-center">
               <ArrowRight size={20} className="text-primary flow-arrow" />
             </div>
-            <div className="border-2 border-primary/20 rounded-md p-5 relative bg-primary/[0.02]">
-              <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-3 py-0.5 rounded text-xs font-bold tracking-wider">AKAMAI EDGE PLATFORM</div>
+            <div className="border-2 border-primary/20 rounded-md p-5 relative bg-primary/[0.02] min-w-0">
+              <div className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-3 py-0.5 rounded text-xs font-bold tracking-wider whitespace-nowrap">AKAMAI EDGE PLATFORM</div>
               <div className="space-y-4 mt-2">
                 <div>
                   <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-2">Delivery & Performance</p>
-                  <div className="grid grid-cols-5 gap-2">
+                  <div className="grid grid-cols-5 gap-1.5">
                     {deliveryProducts.map(({ icon: Icon, label, desc }) => (
-                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-2.5 text-center hover:border-primary/40 transition-colors cursor-pointer">
-                        <Icon size={16} className="text-primary mx-auto mb-1" />
-                        <p className="text-xs font-semibold text-foreground/70">{label}</p>
+                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-2 text-center hover:border-primary/40 transition-colors cursor-pointer overflow-hidden">
+                        <Icon size={14} className="text-primary mx-auto mb-1 shrink-0" />
+                        <p className="text-[10px] font-semibold text-foreground/70 leading-tight truncate">{label}</p>
                       </button>
                     ))}
                   </div>
                 </div>
                 <div>
                   <p className="text-xs font-semibold text-accent tracking-wider uppercase mb-2">Security</p>
-                  <div className="grid grid-cols-4 gap-2">
+                  <div className="grid grid-cols-4 gap-1.5">
                     {securityProducts.map(({ icon: Icon, label, desc }) => (
-                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-2.5 text-center hover:border-accent/40 transition-colors cursor-pointer">
-                        <Icon size={16} className="text-accent mx-auto mb-1" />
-                        <p className="text-xs font-semibold text-foreground/70">{label}</p>
+                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-2 text-center hover:border-accent/40 transition-colors cursor-pointer overflow-hidden">
+                        <Icon size={14} className="text-accent mx-auto mb-1 shrink-0" />
+                        <p className="text-[10px] font-semibold text-foreground/70 leading-tight truncate">{label}</p>
                       </button>
                     ))}
                   </div>
