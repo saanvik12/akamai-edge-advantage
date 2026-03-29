@@ -25,7 +25,7 @@ const ArchitectureSlide = () => {
     <SlideLayout id="architecture" pageNumber={4}>
       <div className="space-y-5 stagger-children">
         <div>
-          <p className="text-primary font-semibold tracking-[0.2em] uppercase text-xs mb-2">Section B — Solution Architecture</p>
+          <p className="text-primary font-semibold tracking-[0.2em] uppercase text-xs mb-2">Solution Overview</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">High-Level Architecture</h2>
           <p className="text-sm text-muted-foreground mt-1">Click any product for details</p>
         </div>

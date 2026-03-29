@@ -80,7 +80,7 @@ const SecuritySolutionsSlide = () => {
     <SlideLayout id="security-solutions" pageNumber={6}>
       <div className="space-y-5 stagger-children">
         <div>
-          <p className="text-accent font-semibold tracking-[0.2em] uppercase text-xs mb-2">Security Architecture</p>
+          <p className="text-accent font-semibold tracking-[0.2em] uppercase text-xs mb-2">Security</p>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">Security Solutions</h2>
           <p className="text-muted-foreground text-sm mt-1">Click each threat for step-by-step mitigation</p>
         </div>

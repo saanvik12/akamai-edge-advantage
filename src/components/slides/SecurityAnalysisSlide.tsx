@@ -44,7 +44,7 @@ const SecurityAnalysisSlide = () => (
   <SlideLayout id="security-analysis" variant="alt" pageNumber={7}>
     <div className="space-y-6 stagger-children">
       <div>
-        <p className="text-accent font-semibold tracking-[0.2em] uppercase text-xs mb-2">Section C — Security Analysis</p>
+        <p className="text-accent font-semibold tracking-[0.2em] uppercase text-xs mb-2">Security Analysis</p>
         <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">How Threats Interconnect</h2>
         <p className="text-sm text-muted-foreground mt-1">Each row shows how one threat escalates — and which Akamai product stops it</p>
       </div>
