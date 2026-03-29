@@ -32,8 +32,8 @@ const CompanyOverviewSlide = () => (
             <AlertTriangle size={18} className="text-accent" />
             <h3 className="font-display text-lg font-bold text-foreground">Current State</h3>
           </div>
-          {currentState.map(({ icon: Icon, text }) => (
-            <div key={text} className="flex items-start gap-2.5">
+          {currentState.map(({ icon: Icon, text, key }) => (
+            <div key={key} className="flex items-start gap-2.5">
               <Icon size={15} className="text-accent/70 mt-0.5 shrink-0" />
               <p className="text-sm text-muted-foreground">{text}</p>
             </div>
