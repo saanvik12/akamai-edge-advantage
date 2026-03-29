@@ -20,7 +20,7 @@ const mappingTable = [
     color: "accent",
     items: [
       { challenge: "DDoS attacks", solutions: ["Prolexic", "Site Shield"] },
-      { challenge: "Credential stuffing", solutions: ["Bot Manager", "API Protector"] },
+      { challenge: "Credential stuffing", solutions: ["Bot Manager", "EdgeWorkers", "API Protector"] },
       { challenge: "Sophisticated bots", solutions: ["Bot Manager Premier (ML)"] },
       { challenge: "Legacy WAF rule sets", solutions: ["App & API Protector (Adaptive)"] },
     ],
