@@ -12,12 +12,12 @@ const deliveryChallenges = [
 ];
 
 const securityChallenges = [
-  { icon: Shield, text: <><TermTooltip term="DDoS" /> attacks on <TermTooltip term="origin" /></> },
-  { icon: AlertTriangle, text: <>Legacy <TermTooltip term="WAF" /> rules outdated</> },
-  { icon: UserX, text: <><TermTooltip term="Credential stuffing" /> surge</> },
-  { icon: ShoppingCart, text: <><TermTooltip term="Inventory scraping" /> by bots</> },
-  { icon: CreditCard, text: <><TermTooltip term="Carding">Carding</TermTooltip> on checkout APIs</> },
-  { icon: Bot, text: <>Sophisticated bot evasion (<TermTooltip term="IP rotation" />, <TermTooltip term="spoofed clients" />)</> },
+  { icon: Shield, key: "ddos", text: <><TermTooltip term="DDoS" /> attacks on <TermTooltip term="origin" /></> },
+  { icon: AlertTriangle, key: "waf", text: <>Legacy <TermTooltip term="WAF" /> rules outdated</> },
+  { icon: UserX, key: "cred", text: <><TermTooltip term="Credential stuffing" /> surge</> },
+  { icon: ShoppingCart, key: "scrape", text: <><TermTooltip term="Inventory scraping" /> by bots</> },
+  { icon: CreditCard, key: "card", text: <><TermTooltip term="Carding">Carding</TermTooltip> on checkout APIs</> },
+  { icon: Bot, key: "evasion", text: <>Sophisticated bot evasion (<TermTooltip term="IP rotation" />, <TermTooltip term="spoofed clients" />)</> },
 ];
 
 const scaleGovChallenges = [
