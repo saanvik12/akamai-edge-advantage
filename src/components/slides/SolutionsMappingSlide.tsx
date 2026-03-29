@@ -31,7 +31,7 @@ const mappingTable = [
     color: "akamai-green",
     items: [
       { challenge: "Multi-geography coordination", solutions: ["GTM (Central)", "DataStream"] },
-      { challenge: "Legacy to microservices", solutions: ["Ion (Hybrid)", "Config Templates"] },
+      { challenge: "Legacy to microservices", solutions: ["Ion (Hybrid)", "EdgeWorkers", "Config Templates"] },
       { challenge: "Acquired companies migration", solutions: ["API Automation", "Rapid Provisioning"] },
       { challenge: "Cross-team change mgmt", solutions: ["Workflow Automation", "Audit Logs"] },
     ],

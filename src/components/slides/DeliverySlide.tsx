@@ -67,7 +67,7 @@ const DeliverySlide = () => {
           <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground">Delivery Strategy</h2>
         </div>
 
-        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div className="grid md:grid-cols-4 lg:grid-cols-7 gap-4">
           {solutions.map((s, i) => (
             <div
               key={s.title}
