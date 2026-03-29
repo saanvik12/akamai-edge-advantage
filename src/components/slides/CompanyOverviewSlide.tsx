@@ -3,7 +3,7 @@ import { Server, Cloud, Globe, Bug, GraduationCap, AlertTriangle, Target, Networ
 
 const currentState = [
   { icon: Server, text: "Legacy monolith on on-prem + AWS" },
-  { icon: Network, text: "Acquired platforms on different providers" },
+  { icon: Network, text: "Acquired companies running apps on different cloud providers" },
   { icon: ShieldCheck, text: "Legacy WAF rules outdated on some configurations" },
   { icon: Bug, text: "Active threats: credential stuffing, scraping, DDoS" },
   { icon: GraduationCap, text: "New teams not yet trained on Akamai" },
