@@ -1,12 +1,13 @@
 import SlideLayout from "./SlideLayout";
+import TermTooltip from "./TermTooltip";
 import { Server, Cloud, Globe, Bug, GraduationCap, AlertTriangle, Target, Network, Zap, ShieldCheck, Map, KeyRound } from "lucide-react";
 
 const currentState = [
-  { icon: Server, text: "Legacy monolith on on-prem + AWS" },
-  { icon: Network, text: "Acquired companies running apps on different cloud providers" },
-  { icon: ShieldCheck, text: "Legacy WAF rules outdated on some configurations" },
-  { icon: Bug, text: "Active threats: credential stuffing, scraping, DDoS" },
-  { icon: GraduationCap, text: "New teams not yet trained on Akamai" },
+  { icon: Server, key: "legacy", text: "Legacy monolith on on-prem + AWS" },
+  { icon: Network, key: "acquired", text: "Acquired companies running apps on different cloud providers" },
+  { icon: ShieldCheck, key: "waf", text: <>Legacy <TermTooltip term="WAF" /> rules outdated on some configurations</> },
+  { icon: Bug, key: "threats", text: <>Active threats: <TermTooltip term="credential stuffing" />, <TermTooltip term="inventory scraping">scraping</TermTooltip>, <TermTooltip term="DDoS" /></> },
+  { icon: GraduationCap, key: "training", text: "New teams not yet trained on Akamai" },
 ];
 
 const targetState = [
