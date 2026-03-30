@@ -1,7 +1,7 @@
 import { useState } from "react";
 import SlideLayout from "./SlideLayout";
 import CalloutModal from "./CalloutModal";
-import { Clock, Zap, Image, AlertTriangle, Globe, Users, CheckCircle2, ArrowRight } from "lucide-react";
+import { Clock, Zap, Image, AlertTriangle, Globe, Users, CheckCircle2, ArrowRight, Layers } from "lucide-react";
 
 const deliverySolutions = [
   {
@@ -18,17 +18,17 @@ const deliverySolutions = [
     bestPractice: "Use golden templates with locked-down rules to prevent configuration drift across 5,000 properties. Use SAN grouping in CPS to minimize cert management overhead.",
   },
   {
-    icon: Zap, issue: "Handle 5x peak traffic", solution: "Ion + SureRoute + GTM Failover + Visitor Waiting Room",
-    products: ["Ion", "GTM", "Visitor Waiting Room", "mPulse"],
+    icon: Zap, issue: "Handle 5x peak traffic", solution: "Ion + SureRoute + GTM Failover + EdgeWorkers Waiting Room",
+    products: ["Ion", "GTM", "EdgeWorkers", "Visitor Waiting Room", "mPulse"],
     steps: [
       "Configure aggressive edge caching for static & semi-dynamic content (e.g. product catalog pages that update every few hours — cached at edge with short TTLs or cache keys for variation)",
       "Enable SureRoute intelligent origin selection — real-time monitoring of origin latency across multiple paths",
       "Set up GTM (Global Traffic Manager) failover groups with health checks — if primary origin is degraded, traffic auto-routes to secondary origin (when available)",
-      "Deploy Visitor Waiting Room on high-demand pages (checkout, flash sales) — when traffic exceeds origin capacity, users enter a branded queue with estimated wait times instead of seeing errors. Automatically drains queue as capacity frees up",
-      "mPulse tracks cache hit ratio and user experience metrics (LCP, TTFB) to validate offload effectiveness during peaks",
+      "Deploy EdgeWorkers to serve personalized waiting room pages at edge — when traffic exceeds origin capacity, users enter branded queue with estimated wait times, regional info, and personalized messaging. EdgeWorkers calculates queue position based on request timestamp without touching origin",
+      "mPulse tracks cache hit ratio and user experience metrics (LCP, TTFB) to validate offload effectiveness during peaks. Monitor waiting room engagement metrics to optimize queue messaging",
     ],
-    result: "Edge absorbs 5× spikes, waiting room protects origin during extreme bursts, zero 5xx errors for end users",
-    bestPractice: "Enable Tiered Distribution to reduce origin requests by 60-80% through parent cache hierarchy. Pre-configure Visitor Waiting Room thresholds before peak events",
+    result: "Edge absorbs 5× spikes, personalized waiting room prevents errors while keeping users engaged, zero origin CPU impact from queue management, 99.99% uptime during extreme bursts",
+    bestPractice: "Use EdgeWorkers for waiting room logic to serve queue pages with zero origin requests — origin capacity is conserved entirely for actual checkout traffic. Pre-configure queue thresholds based on origin capacity benchmarks.",
   },
   {
     icon: Image, issue: "Slow image loading", solution: "Image & Video Manager (IVM)",
@@ -77,6 +77,19 @@ const deliverySolutions = [
     ],
     result: "Teams onboard hostnames with zero CLI knowledge, consistent configuration, deployment time reduced 80%",
     bestPractice: "Lock template rules as read-only — teams can extend but not modify baseline security and caching rules",
+  },
+  {
+    icon: Layers, issue: "Monolith-to-microservices migration", solution: "EdgeWorkers Traffic Routing + GTM",
+    products: ["EdgeWorkers", "GTM", "PAPI"],
+    steps: [
+      "Define migration phases — Phase 1 routes legacy monolith tenants via GTM to on-prem origin. Phase 2 routes new microservice tenants to containerized services in AWS",
+      "Deploy EdgeWorkers request interceptor — examines tenant ID and feature flags to determine routing destination without exposing internal architecture",
+      "Implement canary routing — EdgeWorkers routes 5% of monolith traffic to new microservices to validate behavior and performance before full migration",
+      "Request transformation at edge — EdgeWorkers translates legacy monolith API contracts into new microservice format (header injection, payload mapping) and transforms responses back to legacy format for client compatibility",
+      "Gradual tenant migration — each tenant migrates from monolith→microservices via feature flag in EdgeWorkers, no origin config changes needed. Instant rollback available by resetting feature flag",
+    ],
+    result: "Zero downtime migration, traffic routing decoupled from origin infrastructure, instant per-tenant rollback capability, coexistence of legacy and new services during transition",
+    bestPractice: "Store tenant-to-service routing rules in EdgeWorkers KV storage — centralized, versioned, instant updates without code deployment. Canary phase persists 2-4 weeks to catch edge cases in production traffic",
   },
 ];
 

@@ -71,6 +71,18 @@ const securitySolutions = [
     result: "Spoofing one feature possible; spoofing 100 features across 1000 requests = impossible. Attack ROI becomes negative",
     bestPractice: "Behavioral analysis catches bots that rotate IPs and spoof User-Agents — signature-based solutions miss these entirely",
   },
+  {
+    icon: Shield, issue: "Bot API attacks on checkout endpoints", solution: "EdgeWorkers + Bot Manager Custom Logic", products: ["EdgeWorkers", "Bot Manager Premier"],
+    steps: [
+      "Deploy custom EdgeWorkers on high-risk API endpoints (checkout, payments, login) — intercept requests at edge before they reach origin",
+      "Implement custom validation logic — verify request signatures, validate expected headers, check for API schema compliance",
+      "Inject challenge logic at edge — for suspicious requests (missing expected headers, unusual patterns), inject CAPTCHA verification or proof-of-work challenges",
+      "Bot Manager integration — EdgeWorkers evaluates Bot Manager risk scores and gates high-risk requests (scores 75+) with challenges before origin processes",
+      "Fast-path legitimate traffic — verified requests bypass challenges and proceed directly to origin without CAPTCHA friction",
+    ],
+    result: "Checkout API protected from bot attacks at edge, zero origin CPU impact from malicious requests, legitimate users experience no friction",
+    bestPractice: "Use proof-of-work challenges instead of CAPTCHAs for APIs — JavaScript-based challenges are solvable by APIs but add friction to bot scaling economics",
+  },
 ];
 
 const SecuritySolutionsSlide = () => {
