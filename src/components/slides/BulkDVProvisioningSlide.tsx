@@ -75,31 +75,28 @@ const BulkDVProvisioningSlide = () => {
               <h3 className="font-bold text-base">Bulk SAN Enrollment</h3>
             </div>
             <p className="text-[11px] text-white/40 italic">Automated via CPS API</p>
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-2 flex-wrap justify-center">
               <PhaseBox>
                 <Terminal size={16} className="mx-auto mb-1 text-accent" />
-                <div className="font-semibold">POST /enrollments</div>
-                <div className="text-white/50 text-[10px]">100 hostnames<br/>per batch</div>
-              </PhaseBox>
-              <PhaseArrow />
-              <PhaseBox>
-                <Shield size={16} className="mx-auto mb-1 text-primary" />
                 <div className="font-semibold">CPS API</div>
-                <div className="text-white/50 text-[10px]">groups into 1 SAN<br/>certificate each</div>
+                <div className="text-white/50 text-[10px]">creates SAN cert<br/>enrollment (100 hosts/cert)</div>
               </PhaseBox>
               <PhaseArrow />
               <PhaseBox>
                 <Globe size={16} className="mx-auto mb-1 text-cyan-400" />
                 <div className="font-semibold">Public CA</div>
-                <div className="text-white/50 text-[10px]">Let's Encrypt<br/>issues DV certs</div>
+                <div className="text-white/50 text-[10px]">Let's Encrypt generates<br/>validation tokens</div>
+              </PhaseBox>
+              <PhaseArrow />
+              <PhaseBox>
+                <Server size={16} className="mx-auto mb-1 text-primary" />
+                <div className="font-semibold">NetStorage</div>
+                <div className="text-white/50 text-[10px]">tokens uploaded to<br/>single central folder</div>
               </PhaseBox>
             </div>
             <div className="bg-accent/10 border border-accent/30 rounded-lg p-2 mt-1">
               <p className="text-xs text-center font-semibold">
                 5,000 hostnames ÷ 100 SANs = <span className="text-accent text-sm font-bold">50 certificates</span>
-              </p>
-              <p className="text-[10px] text-white/40 text-center mt-0.5">
-                Tokens retrieved via GET, uploaded to Akamai NetStorage (single folder)
               </p>
             </div>
           </div>
@@ -111,27 +108,24 @@ const BulkDVProvisioningSlide = () => {
               <h3 className="font-bold text-base">Automated DV Validation</h3>
             </div>
             <p className="text-[11px] text-white/40 italic">HTTP-01 challenge — zero manual steps</p>
-            <div className="flex items-center gap-2 flex-wrap">
+            <div className="flex items-center gap-2 flex-wrap justify-center">
               <PhaseBox>
                 <Globe size={16} className="mx-auto mb-1 text-cyan-400" />
                 <div className="font-semibold">Let's Encrypt</div>
-                <div className="text-white/50 text-[10px]">sends HTTP-01<br/>challenge</div>
+                <div className="text-white/50 text-[10px]">hits token URL<br/>on edge</div>
               </PhaseBox>
               <PhaseArrow />
               <PhaseBox>
                 <FileCheck size={16} className="mx-auto mb-1 text-green-400" />
-                <div className="font-semibold">Akamai Edge</div>
-                <div className="text-white/50 text-[10px]">serves token file<br/>from NetStorage</div>
+                <div className="font-semibold">Edge serves token</div>
+                <div className="text-white/50 text-[10px]">from NetStorage<br/>→ 200 OK</div>
               </PhaseBox>
               <PhaseArrow />
               <PhaseBox>
                 <CheckCircle size={16} className="mx-auto mb-1 text-green-400" />
-                <div className="font-semibold">200 OK</div>
-                <div className="text-white/50 text-[10px]">ownership proven<br/>certs issued</div>
+                <div className="font-semibold">DV SAN Cert issued</div>
+                <div className="text-white/50 text-[10px]">deployed to edge<br/>network globally</div>
               </PhaseBox>
-            </div>
-            <div className="text-[10px] text-white/30 mt-1 italic">
-              Public DV SAN certs deployed to Akamai Edge Network globally
             </div>
           </div>
 
@@ -141,30 +135,30 @@ const BulkDVProvisioningSlide = () => {
               <span className="bg-accent text-accent-foreground font-bold text-sm w-7 h-7 rounded-md flex items-center justify-center">4</span>
               <h3 className="font-bold text-base">End-to-End Secure Request</h3>
             </div>
-            <p className="text-[11px] text-white/40 italic">Full trust chain established</p>
-            <div className="flex items-center gap-2 flex-wrap">
+            <p className="text-[11px] text-white/40 italic">Full trust chain in action</p>
+            <div className="flex items-center gap-2 flex-wrap justify-center">
               <PhaseBox>
                 <Globe size={16} className="mx-auto mb-1 text-white/70" />
                 <div className="font-semibold">User</div>
-                <div className="text-white/50 text-[10px]">HTTPS request</div>
+                <div className="text-white/50 text-[10px]">visits domain</div>
               </PhaseBox>
               <PhaseArrow />
               <PhaseBox className="ring-1 ring-green-500/40">
                 <Lock size={16} className="mx-auto mb-1 text-green-400" />
-                <div className="font-semibold">Akamai Edge</div>
-                <div className="text-green-400/80 text-[10px]">✓ Public DV cert</div>
+                <div className="font-semibold">Browser</div>
+                <div className="text-green-400/80 text-[10px]">✓ trusts DV SAN cert<br/>(issued by Let's Encrypt)</div>
               </PhaseBox>
               <PhaseArrow />
               <PhaseBox className="ring-1 ring-green-500/40">
-                <Server size={16} className="mx-auto mb-1 text-green-400" />
-                <div className="font-semibold">Origin</div>
-                <div className="text-green-400/80 text-[10px]">✓ Internal Leaf cert</div>
+                <Shield size={16} className="mx-auto mb-1 text-green-400" />
+                <div className="font-semibold">Akamai Edge</div>
+                <div className="text-green-400/80 text-[10px]">✓ validates origin leaf<br/>cert against Root CA</div>
               </PhaseBox>
               <PhaseArrow />
               <PhaseBox>
-                <Key size={16} className="mx-auto mb-1 text-accent" />
-                <div className="font-semibold text-[11px]">Trusted via</div>
-                <div className="text-white/50 text-[10px]">Company Root CA</div>
+                <Server size={16} className="mx-auto mb-1 text-accent" />
+                <div className="font-semibold">Content served</div>
+                <div className="text-white/50 text-[10px]">secure end-to-end</div>
               </PhaseBox>
             </div>
           </div>
