@@ -19,6 +19,7 @@ const Index = () => (
     <CompanyOverviewSlide />
     <ChallengeSlide />
     <ArchitectureSlide />
+    <BulkDVProvisioningSlide />
     <SolutionDesignSlide />
     <SecuritySolutionsSlide />
     <SecurityAnalysisSlide />
