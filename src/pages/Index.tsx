@@ -2,6 +2,7 @@ import TitleSlide from "@/components/slides/TitleSlide";
 import CompanyOverviewSlide from "@/components/slides/CompanyOverviewSlide";
 import ChallengeSlide from "@/components/slides/ChallengeSlide";
 import ArchitectureSlide from "@/components/slides/ArchitectureSlide";
+import BulkDVProvisioningSlide from "@/components/slides/BulkDVProvisioningSlide";
 import SolutionDesignSlide from "@/components/slides/SolutionDesignSlide";
 import SecuritySolutionsSlide from "@/components/slides/SecuritySolutionsSlide";
 import SecurityAnalysisSlide from "@/components/slides/SecurityAnalysisSlide";
@@ -18,6 +19,7 @@ const Index = () => (
     <CompanyOverviewSlide />
     <ChallengeSlide />
     <ArchitectureSlide />
+    <BulkDVProvisioningSlide />
     <SolutionDesignSlide />
     <SecuritySolutionsSlide />
     <SecurityAnalysisSlide />

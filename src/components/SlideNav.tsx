@@ -5,6 +5,7 @@ const slides = [
   { id: "company-overview", label: "AT Retailers" },
   { id: "challenge", label: "Challenges" },
   { id: "architecture", label: "Architecture" },
+  { id: "bulk-dv", label: "Bulk DV" },
   { id: "delivery-solutions", label: "Delivery" },
   { id: "security-solutions", label: "Security" },
   { id: "security-analysis", label: "Analysis" },
