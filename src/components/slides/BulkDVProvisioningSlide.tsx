@@ -37,35 +37,34 @@ const BulkDVProvisioningSlide = () => {
               <h3 className="font-bold text-base">Establish Back-End Trust</h3>
             </div>
             <p className="text-[11px] text-white/40 italic">One-time setup</p>
-            {/* Two-row layout for clarity */}
-            <div className="space-y-2">
-              {/* Row 1: Generate & Sign */}
-              <div className="flex items-center gap-2">
-                <PhaseBox>
-                  <Terminal size={16} className="mx-auto mb-1 text-accent" />
-                  <div className="font-semibold">AT Retailers PKI</div>
-                  <div className="text-white/50 text-[10px]">generates 1 Root CA</div>
-                </PhaseBox>
-                <PhaseArrow />
-                <PhaseBox>
-                  <Key size={16} className="mx-auto mb-1 text-cyan-400" />
-                  <div className="font-semibold">Root CA signs</div>
-                  <div className="text-white/50 text-[10px]">individual leaf certs<br/>for each origin</div>
-                </PhaseBox>
-              </div>
-              {/* Row 2: Two destinations, different cert types */}
-              <div className="grid grid-cols-2 gap-2">
-                <div className="bg-green-500/10 border border-green-500/20 rounded-lg p-2 text-center">
-                  <Server size={14} className="mx-auto mb-1 text-green-400" />
-                  <div className="text-[11px] font-semibold">Leaf certs → Origins</div>
-                  <div className="text-[10px] text-white/40">installed on 500+ servers<br/><span className="text-green-400/70">presented during TLS handshake</span></div>
-                </div>
-                <div className="bg-primary/10 border border-primary/20 rounded-lg p-2 text-center">
-                  <Shield size={14} className="mx-auto mb-1 text-primary" />
-                  <div className="text-[11px] font-semibold">Root CA → Akamai CPS</div>
-                  <div className="text-[10px] text-white/40">uploaded to Trust Set<br/><span className="text-blue-400/70">edge validates leaf certs against this</span></div>
-                </div>
-              </div>
+            {/* Linear 4-step flow */}
+            <div className="flex items-center gap-2 flex-wrap justify-center">
+              <PhaseBox>
+                <Terminal size={16} className="mx-auto mb-1 text-accent" />
+                <div className="font-semibold">AT Retailers PKI</div>
+                <div className="text-white/50 text-[10px]">generates 1 Root CA</div>
+              </PhaseBox>
+              <PhaseArrow />
+              <PhaseBox>
+                <Key size={16} className="mx-auto mb-1 text-cyan-400" />
+                <div className="font-semibold">Signs Leaf Certs</div>
+                <div className="text-white/50 text-[10px]">one per origin server</div>
+              </PhaseBox>
+              <PhaseArrow />
+              <PhaseBox>
+                <Server size={16} className="mx-auto mb-1 text-green-400" />
+                <div className="font-semibold">Leaf → Origins</div>
+                <div className="text-white/50 text-[10px]">installed on 500+<br/>servers (stay here)</div>
+              </PhaseBox>
+              <PhaseArrow />
+              <PhaseBox>
+                <Shield size={16} className="mx-auto mb-1 text-primary" />
+                <div className="font-semibold">Root CA → CPS</div>
+                <div className="text-white/50 text-[10px]">uploaded to Akamai<br/>Trust Set</div>
+              </PhaseBox>
+            </div>
+            <div className="text-[10px] text-white/30 mt-1 italic text-center">
+              Edge validates origin leaf certs against the uploaded Root CA
             </div>
           </div>
 
