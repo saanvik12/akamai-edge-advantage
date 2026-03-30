@@ -119,11 +119,11 @@ const ArchitectureSlide = () => {
               <div className="space-y-4 mt-2">
                 <div>
                   <p className="text-xs font-semibold text-primary tracking-wider uppercase mb-2">Delivery & Performance</p>
-                  <div className="grid grid-cols-5 gap-1.5">
+                  <div className="grid grid-cols-5 gap-2">
                     {deliveryProducts.map(({ icon: Icon, label, desc }) => (
-                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-2 text-center hover:border-primary/40 transition-colors cursor-pointer overflow-hidden">
-                        <Icon size={14} className="text-primary mx-auto mb-1 shrink-0" />
-                        <p className="text-[10px] font-semibold text-foreground/70 leading-tight truncate">{label}</p>
+                      <button key={label} onClick={() => setActiveProduct({ label, desc })} className="clean-card p-3 text-center hover:border-primary/40 transition-colors cursor-pointer overflow-hidden">
+                        <Icon size={18} className="text-primary mx-auto mb-1.5 shrink-0" />
+                        <p className="text-xs font-semibold text-foreground/70 leading-tight">{label}</p>
                       </button>
                     ))}
                   </div>
